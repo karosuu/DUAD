@@ -23,3 +23,20 @@ def export_csv(students):
             )
 
         print("El archivo fue guarado correctaente")
+
+
+def import_csv(filepath):
+    students = []
+    try:
+        with open (filepath, 'r', encoding="utf-8" ) as file:
+            reader = csv.DictReader(file)
+            for student in reader:
+                student["spanish"] = float(student["spanish"])
+                student["english"] = float(student["english"])
+                student["social"] = float(student["social"])
+                student["science"] = float(student["science"])
+                students.append(student)
+    except FileNotFoundError:
+        print(f"El archivo no existe {FileNotFoundError}")
+            
+    return students

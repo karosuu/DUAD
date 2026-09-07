@@ -1,6 +1,3 @@
-
-
-
 def show_menu():
     print("\n-----Menu del sistema de estudiantes")
     print("1. Ingresar a estudiantes")
@@ -10,44 +7,17 @@ def show_menu():
     print("5. Exportar CSV")
     print("6. Importar CSV")
     print("7. Salir")
-    print ("8. Eiminar estudiantes")
+    print ("8. Eliminar estudiantes")
     print ("9. Ver estudiantes reprobados")
     
-def user_menu_action():
-    
     while True:
-        show_menu()
-        
         try:
-            option = int(input("Selecciones una opcion: "))
+            option = int(input("Seleccione una opcion: "))
         except ValueError as error:
             print(f"Opcion no valida {error}")
             continue
-    
-        if option  == 1:
-           
-            
-                
-                   
-               
-                
-        elif option == 2:
-            
-        elif option == 3:
         
-        
-        elif option == 4:
-        
-        elif option == 5:
-            
-        elif option == 6:
-        
-        elif option == 7:
-            break    
-        
-        elif option == 8:            
-            
-        elif option == 9:    
-        
+        if 1 <= option <= 9:
+            return option
         else:
-            print("Opcion no valida")    
+            priont("Opcion nmo valida")
