@@ -21,10 +21,9 @@ def export_csv(students):
                     student["science"],
                 ]
             )
+        return True
 
-        print("El archivo fue guarado correctaente")
-
-
+#valida si el archivo a importar no existe con el try y exception
 def import_csv(filepath):
     students = []
     try:
@@ -37,6 +36,6 @@ def import_csv(filepath):
                 student["science"] = float(student["science"])
                 students.append(student)
     except FileNotFoundError:
-        print(f"El archivo no existe {FileNotFoundError}")
+        pass
             
     return students
