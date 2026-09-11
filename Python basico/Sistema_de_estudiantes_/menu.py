@@ -20,4 +20,4 @@ def show_menu():
         if 1 <= option <= 9:
             return option
         else:
-            priont("Opcion nmo valida")
+            print("Opcion nmo valida")
