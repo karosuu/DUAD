@@ -5,7 +5,7 @@ students = []
 def get_students_quantity():
     while True:
         try:
-            students_quantity = int(input("Cuantos estudiantes desea ingresar"))
+            students_quantity = int(input("Cuantos estudiantes desea ingresar: "))
         except ValueError as error:
             print("Ingrese un valor correcto")
             continue
@@ -78,9 +78,10 @@ def top_three_students():
 
         grade_average = calculate_average(student)
         student["average"] = grade_average
-    students.sort(key=lambda x: x["average"], reverse=True)
+    
+    sorted_students = sorted(students, key=lambda x: x["average"], reverse=True)
 
-    top_3 = students[:3]
+    top_3 = sorted_students[:3]
 
     print("Los estudiantes top 3 son:")
 

@@ -1,5 +1,5 @@
 def show_menu():
-    print("\n-----Menu del sistema de estudiantes")
+    print("\n-----Menu del sistema de estudiantes-----")
     print("1. Ingresar a estudiantes")
     print("2. Ver todos los estudiantes")
     print("3. Ver Top 3")
@@ -9,10 +9,11 @@ def show_menu():
     print("7. Salir")
     print ("8. Eliminar estudiantes")
     print ("9. Ver estudiantes reprobados")
+    print("---------------------------------------------")
     
     while True:
         try:
-            option = int(input("Seleccione una opcion: "))
+            option = int(input("\nSeleccione una opcion: "))
         except ValueError as error:
             print(f"Opcion no valida {error}")
             continue
