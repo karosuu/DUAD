@@ -1,7 +1,4 @@
-students = []
-
-
-# Solicitamos la cantidad de estudinates y debe ser mayor  a 0
+#Solicitamos la cantidad de estudinates y debe ser mayor  a 0
 def get_students_quantity():
     while True:
         try:
@@ -19,9 +16,9 @@ def get_students_quantity():
 
 # Se solicitan los datos del estudiantes y se crea el diccionario
 # para guardar los valores
-def add_students(students_quantity):
+def add_students(students, students_quantity):
     for student_index in range(students_quantity):
-        student_name = input("Ingrese el nombre del estudiante: \n")
+        student_name = input("Ingrese el nombre del estudiante: ")
         student_section = input("Ingrese la seccion del estudiante: ")
         spanish_grade = get_valid_grade("Español")
         english_grade = get_valid_grade("Ingles")
@@ -56,7 +53,7 @@ def get_valid_grade(subject):
 
 
 # Muestra todos los estudiantes con sus datos
-def show_all_students():
+def show_all_students(students):
     if not students:
         print("No hay estudiantes registrados")
         return
@@ -73,7 +70,7 @@ def show_all_students():
 
 
 # Calcula el top 3 de estudiants por su average de notas
-def top_three_students():
+def top_three_students(students):
     for student in students:       
 
         grade_average = calculate_average(student)
@@ -94,7 +91,7 @@ def top_three_students():
 
 
 # Se calcula el promedio general
-def general_average():
+def general_average(students):
     total_average = 0
 
     if not students:
@@ -139,7 +136,7 @@ def delete_student(students):
 
             while True:
                 confirmation = input(
-                    "Esta seguro que desea eliminar al estudiante? (s/n)"
+                    "Esta seguro que desea eliminar al estudiante? (s/n): "
                 ).lower()
 
                 if not (confirmation == "s" or confirmation == "n"):
@@ -169,7 +166,7 @@ def show_failed_students(students):
     for student in students:
         if student["spanish"] < 60 or  student["english"] < 60 or student["social"] < 60 or student["science"] < 60:
             found = True
-            print(f"Nombre {student['name']} Seccion: {student['section']}")           
+            print(f"\nNombre {student['name']} Seccion: {student['section']}")           
             
             if student['spanish'] < 60:
                 print(f"Español: {student['spanish']}")
