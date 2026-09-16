@@ -11,3 +11,5 @@ class Circle:
 
 
 my_circle = Circle(5)
+
+print(my_circle.get_area())
