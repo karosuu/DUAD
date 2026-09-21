@@ -1,11 +1,8 @@
-students = []
-
-
-# Solicitamos la cantidad de estudinates y debe ser mayor  a 0
+#Solicitamos la cantidad de estudinates y debe ser mayor  a 0
 def get_students_quantity():
     while True:
         try:
-            students_quantity = int(input("Cuantos estudiantes desea ingresar"))
+            students_quantity = int(input("Cuantos estudiantes desea ingresar: "))
         except ValueError as error:
             print("Ingrese un valor correcto")
             continue
@@ -19,25 +16,25 @@ def get_students_quantity():
 
 # Se solicitan los datos del estudiantes y se crea el diccionario
 # para guardar los valores
-def add_students(students_quantity):
-    for students_index in range(students_quantity):
-        students_name = input("Ingrese el nombre del estudiante: \n")
-        students_section = input("Ingrese la seccion del estudiante: ")
+def add_students(students, students_quantity):
+    for student_index in range(students_quantity):
+        student_name = input("Ingrese el nombre del estudiante: ")
+        student_section = input("Ingrese la seccion del estudiante: ")
         spanish_grade = get_valid_grade("Español")
         english_grade = get_valid_grade("Ingles")
         social_grade = get_valid_grade("Sociales")
         science_grade = get_valid_grade("Ciencia")
 
-        stundents_dict = {
-            "name": students_name,
-            "section": students_section,
+        students_dict = {
+            "name": student_name,
+            "section": student_section,
             "spanish": spanish_grade,
             "english": english_grade,
             "social": social_grade,
             "science": science_grade,
         }
 
-        students.append(stundents_dict)
+        students.append(students_dict)
 
 
 # Se valida que la nota se mayor a 0 y menor que 100
@@ -56,7 +53,11 @@ def get_valid_grade(subject):
 
 
 # Muestra todos los estudiantes con sus datos
-def show_all_students():
+def show_all_students(students):
+    if not students:
+        print("No hay estudiantes registrados")
+        return
+    
     for student in students:
         print("------------------")
         print(f"Nombre: {student['name']}")
@@ -69,15 +70,15 @@ def show_all_students():
 
 
 # Calcula el top 3 de estudiants por su average de notas
-def top_three_students():
-    for student in students:
-        calculate_average(student)
+def top_three_students(students):
+    for student in students:       
 
         grade_average = calculate_average(student)
         student["average"] = grade_average
-    students.sort(key=lambda x: x["average"], reverse=True)
+    
+    sorted_students = sorted(students, key=lambda x: x["average"], reverse=True)
 
-    top_3 = students[:3]
+    top_3 = sorted_students[:3]
 
     print("Los estudiantes top 3 son:")
 
@@ -90,7 +91,7 @@ def top_three_students():
 
 
 # Se calcula el promedio general
-def general_average():
+def general_average(students):
     total_average = 0
 
     if not students:
@@ -120,3 +121,64 @@ def calculate_average(student):
     grade_average = sum(grades) / len(grades)
 
     return grade_average
+
+
+# Pide el nombre y seccion del estudiante
+def delete_student(students):
+    student_name = input("Ingrese el nombre del estudiante que desea eliminar: ")
+    student_section = input("Ingrese la seccion del estudiante: ")
+
+    found = False
+
+    # Busca el estudinate en el diccionario studdent de la lista students
+    for student in students:
+        if student_name == student["name"] and student_section == student["section"]:
+
+            while True:
+                confirmation = input(
+                    "Esta seguro que desea eliminar al estudiante? (s/n): "
+                ).lower()
+
+                if not (confirmation == "s" or confirmation == "n"):
+                    print(
+                        "Respuesta no valida. Ingrese s para confirmar o n para cancelar."
+                    )
+                else:
+                    break
+
+            found = True
+
+            # Elimina al diccionaro student que concuerde            if confirmation == "s":
+            if confirmation == "s":
+                students.remove(student)
+                print("El estudiante fue eliminado correctamente")
+                return
+
+            if confirmation == "n":
+                print("Eliminacion cancelada")
+                return
+    if not found:
+        print("El estudiante no fue encontrado")
+
+
+def show_failed_students(students):
+    found = False
+    for student in students:
+        if student["spanish"] < 60 or  student["english"] < 60 or student["social"] < 60 or student["science"] < 60:
+            found = True
+            print(f"\nNombre {student['name']} Seccion: {student['section']}")           
+            
+            if student['spanish'] < 60:
+                print(f"Español: {student['spanish']}")
+                
+            if student['english'] < 60:
+                print(f"Ingles: {student['english']}")
+            
+            if student['social'] < 60:
+                print(f"Sociales: {student['social']}")    
+            
+            if student['science'] < 60:
+                print(f"Ciencias: {student['science']}")    
+    
+    if not found:
+        print( "No hay estudiantes reprobados")
