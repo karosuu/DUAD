@@ -1,0 +1,63 @@
+from menu import show_menu
+
+from actions import (
+    get_students_quantity,
+    get_valid_grade,
+    add_students,
+    show_all_students,
+    top_three_students,
+    general_average,
+    delete_student,
+    show_failed_students,
+)
+
+from data import export_csv, import_csv
+
+
+def main():
+    students = []
+    option = 0
+    while option != 7:
+        option = show_menu()
+
+        if option == 1:
+            students_quantity = get_students_quantity()
+            add_students(students, students_quantity)
+
+        elif option == 2:
+            show_all_students(students)
+
+        elif option == 3:
+            top_three_students(students)
+
+        elif option == 4:
+            general_average(students)
+
+        elif option == 5:
+            export = export_csv(students)
+            if export:
+                print("El archivo fue guardado correctamente")
+
+        # Se limpia la lista students actual
+        # y se agregan los estudiantes importados
+        elif option == 6:
+            imported_students = import_csv("Archivo_de_estudiantes.csv")
+            if imported_students:
+                students.clear()
+                students.extend(imported_students)
+                print("Estudiantes actualizados con exito")
+            else:
+                print("No hay datos que importar.")
+
+        elif option == 7:
+            break
+
+        elif option == 8:
+            delete_student(students)
+
+        elif option == 9:
+            show_failed_students(students)
+
+
+if __name__ == "__main__":
+    main()
