@@ -27,10 +27,14 @@ def data_input():
     return height, width
 
 #obtiene los valores ingresados
-height,width = data_input()
+height, width= data_input()
 
-# crea el objeto
-rectangle_measurements = Rectangle(height, width)
+try:
+    # crea el objeto
+    rectangle_measurements = Rectangle(height, width)
 
-print(f"\nEl area del rectangulo es {rectangle_measurements.get_area()}")
-print(f"El perimetro del rectangulo es {rectangle_measurements.get_perimeter()}")
+    print(f"\nEl area del rectangulo es {rectangle_measurements.get_area()}")
+    print(f"El perimetro del rectangulo es {rectangle_measurements.get_perimeter()}")
+
+except ValueError:
+    print("El valor no puede ser negativo")
