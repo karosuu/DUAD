@@ -17,7 +17,7 @@ def get_students_quantity():
             print("Debe ingresar al menos un estudiante")
 
 
-# Se solicitan los datos del estudiantes y se crea el diccionario
+# Se solicitan los datos del estudiantes y se crea el objeto
 # para guardar los valores
 def add_students(students, students_quantity):
     for student_index in range(students_quantity):
@@ -133,7 +133,7 @@ def delete_student(students):
 
     found = False
 
-    # Busca el estudinate en el diccionario studdent de la lista students
+    # Busca el estudinate en el objeto studdent de la lista students
     for student in students:
         if student_name == student.name and student_section == student.section:
 

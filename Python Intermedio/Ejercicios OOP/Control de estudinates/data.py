@@ -1,4 +1,5 @@
 import csv
+from student import Student
 
 
 # Crea los encabezadp de la primera fila como una lista
