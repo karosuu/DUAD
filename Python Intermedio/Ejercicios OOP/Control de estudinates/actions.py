@@ -150,7 +150,7 @@ def delete_student(students):
                     break
 
             found = True
-            # Elimina al diccionaro student que concuerde            if confirmation == "s":
+            # Elimina al student que concuerde
             if confirmation == "s":
                 students.remove(student)
                 print("El estudiante fue eliminado correctamente")
