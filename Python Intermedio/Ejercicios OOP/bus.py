@@ -1,7 +1,7 @@
 #En este ejercicio no se ejecuta la opcion de bajar. 
 
-#class Person:
-def __init__(self, passenger_name):
+class Person:
+    def __init__(self, passenger_name):
         self.passenger_name = passenger_name
 
 
