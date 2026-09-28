@@ -78,7 +78,7 @@ def show_menu():
         if 1 <= option <= 4:
             return option
         else:
-            print("Opcion nmo valida")
+            print("Opcion no valida")
 
 
 def main():
