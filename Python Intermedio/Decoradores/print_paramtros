@@ -1,0 +1,19 @@
+def print_decorator(func):
+    def wrapper(hello):
+        print("Parámetro:", hello)
+
+        result = func(hello)
+
+        print("Retorno:", result)
+
+        return result
+
+    return wrapper
+
+
+@print_decorator
+def my_function(hello):
+    return 15
+
+
+my_function("Hola")
