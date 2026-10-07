@@ -1,9 +1,9 @@
 def print_decorator(func):
-    def wrapper(*args,):
+    def wrapper(*args, **kwargs):
         
         print("Parámetro:", args)
         
-        result = func(*args,)
+        result = func(*args, **kwargs)
 
         print("Retorno:", result)
 
