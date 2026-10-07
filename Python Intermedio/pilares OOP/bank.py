@@ -17,7 +17,7 @@ class BankAccount:
 
 
 # Crea una cuenta nueva
-class SavingAccount(BankAccount):
+class SavingAccounts(BankAccount):
     def __init__(self, balance, min_balance):
         # Super inicializa el balance de la clase padre
         super().__init__(balance)
@@ -48,7 +48,7 @@ def withdraw_money(my_account):
 
 # Crea una cuenta bancaria con un balance inicial de 500
 my_account = BankAccount(500)
-saving_account = SavingAccount(my_account.balance, 100)
+saving_account = SavingAccounts(my_account.balance, 100)
 amount_to_add(saving_account)
 print(f"El balance actual es: {saving_account.balance}")
 
