@@ -21,7 +21,7 @@ def log_call(func):
 def validate_numbers(func):
 
     @wraps(func)
-    def wrapper(*args):
+    def wrapper(*args, **kwargs):
         for arg in args:
             if not isinstance(arg, (int, float)):
                 raise TypeError(f"Alguno de los valores no es numericos: {args}")
