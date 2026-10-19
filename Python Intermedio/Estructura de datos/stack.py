@@ -21,18 +21,23 @@ class Stack:
             current_node = current_node.next
 
     def push(self, node):
+        # Conecta el nuevo nodo con la cima actual. 
+        #  Si la pila está vacía, node.next será None.
         node.next = self.head
         self.head = node
 
     def pop(self):
         if self.head:
+            # Guarda el valor del nodo que se va a eliminar.
             previous_head = self.head.data
+            # Actualiza la cima para que apunte al siguiente nodo.
+            # De esta manera, el nodo anterior deja de pertenecer a la pila.
             self.head = self.head.next
 
             return previous_head
-        
+
         else:
-            raise ValueError ("No se puede eliminar un elemento de una pila vacía.")
+            raise ValueError("No se puede eliminar un elemento de una pila vacía.")
 
 
 # first_node = Node("Hola")
@@ -52,7 +57,7 @@ class Stack:
 # print("Estructura después de pop:")
 # structure.print_structure()
 
-#Crear una pila vacía
+# Crear una pila vacía
 structure = Stack()
 
 try:
@@ -63,7 +68,7 @@ except ValueError as error:
     print("Error:", error)
 
 # Continuar ejecutando el programa
-print("\nPrueba finalizada.")   
+print("\nPrueba finalizada.")
 
 
 # Imprimir la pila vacía
