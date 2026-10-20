@@ -75,16 +75,26 @@ class Deque:
             self.head.prev = None
 
     def pop_right(self):
+        # Comprobamos si la deque está vacía.
+        # Si tail es None, no hay ningú
         if self.tail is None:
             return
-
+        # Movemos tail al nodo anterior al último.
+        # De esta manera, el penúltimo nodo pasa a ser el último.
         self.tail = self.tail.prev
 
+        # Comprobamos si tail quedó en None.
+        # Esto significa que acabamos de eliminar el único nodo
+        # que había en la deque, por lo que head también debe ser None.
         if self.tail is None:
             self.head = None
 
         else:
+            # Si todavía quedan nodos, eliminamos la conexión
+            # hacia el nodo que acabamos de quitar.
+            # El nuevo último nodo ya no debe apuntar a ningún nodo siguiente.
             self.tail.next = None
+
 
 print("\n========== PRUEBA 1: PUSH LEFT ==========")
 
@@ -106,7 +116,6 @@ deque_right = Deque()
 deque_right.push_right(Node("A"))
 deque_right.push_right(Node("B"))
 deque_right.push_right(Node("Final"))
-
 
 
 print("Resultado obtenido:")
