@@ -1,0 +1,65 @@
+Historial de cambios - repositorio DUAD
+=======================================
+Revisado con: git log --format=fuller --stat
+Rama actual: past-exercises
+Fecha de revisión: 28 de agosto de 2026
+
+
+Commit 3 (más reciente)
+-----------------------
+Hash:    6282593e1bc2f3455def1552da7671418c246e0a
+Autor:   Carlos Pineda
+Fecha:   Fri Aug 28 13:59:07 2026 -0600
+Mensaje: Merge branch 'main' of https://github.com/karosuu/DUAD
+
+Qué cambió:
+  Se fusionó la rama main remota (GitHub) con past-exercises.
+  El único archivo que se incorporó de main fue README.md
+  (el archivo generado al crear el repositorio en GitHub).
+
+Por qué se hizo:
+  El historial local y el de GitHub habían empezado por separado:
+  GitHub ya tenía el commit inicial con el README, y en local se
+  había creado past-exercises con los ejercicios del curso.
+  Al intentar subir main, Git rechazó el push porque el remoto
+  tenía commits que no existían en local. Este merge unió ambas
+  historias para poder trabajar y abrir un pull request hacia main.
+
+
+Commit 2
+--------
+Hash:    d9a08024282f2dad5897c8b5bcfe0d75869c31c9
+Autor:   Carlos Pineda
+Fecha:   Fri Aug 28 13:54:17 2026 -0600
+Mensaje: Added all my course to the new repository
+
+Qué cambió:
+  Se agregaron 122 archivos (2094 líneas) con el material de cursos:
+  - IT Essentials: ejercicios de algoritmos (.docx), pseudocódigo
+    y terminales (.pdf).
+  - Python basico: ejercicios de ejemplo, ejercicios guiados,
+    entregables (sintaxis, listas, funciones, excepciones, archivos,
+    CSV, diccionarios, JSON) y lógica de programación (diagramas
+    de flujo y pseudocódigo).
+
+Por qué se hizo:
+  El objetivo de este repositorio es guardar los ejercicios
+  anteriores del curso en un solo lugar (DUAD), en la rama
+  past-exercises, para versionarlos y luego integrarlos a main.
+
+
+Commit 1 (más antiguo)
+----------------------
+Hash:    18d8a6df0e0ac54c82feb8e7b430931c0ab03452
+Autor:   Carlos Pineda (vía GitHub)
+Fecha:   Fri Aug 28 13:47:24 2026 -0600
+Mensaje: Initial commit
+
+Qué cambió:
+  Se creó el repositorio en GitHub con un README.md que contiene
+  únicamente el título "# DUAD".
+
+Por qué se hizo:
+  Es el commit automático que GitHub genera al crear un repositorio
+  nuevo con la opción de incluir un README. Marca el inicio de la
+  rama main en el remoto.
