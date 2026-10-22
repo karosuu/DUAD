@@ -1,5 +1,5 @@
 class Node:
-    data: str
+    data: int
     next: "Node"
 
     def __init__(self, data, next=None):
@@ -16,7 +16,7 @@ class LinkedList:
     def insert_front(self, data):
         # Crea el nuevo nodo y lo asigna al head.
         node = Node(data)
-        # El nuevo nodo apunta al incio de la cola.
+        # El nuevo nodo apunta al inicio de la cola.
         node.next = self.head
         # El nuevo nodo se convierte en el primero de la lista.
         self.head = node
@@ -37,7 +37,7 @@ class LinkedList:
         while current_node.next is not None:
             current_node = current_node.next
 
-        # Enloaza el ultimo nodo con el nuevo nodo
+        # Enlaza el ultimo nodo con el nuevo nodo
         current_node.next = node
 
     def delete(self, data):
@@ -46,12 +46,12 @@ class LinkedList:
 
         # Compara el valor del nodo almacenado con el que quiero eliminar.
         if self.head.data == data:
-            # Actualiz self.head al siguiente nodp
+            # Actualiza self.head al siguiente nodp
             self.head = self.head.next
             return
 
         # Si el valor no esta en la lista iniciamos
-        # el rwecorrido desde self.head
+        # el recorrido desde self.head
         current_node = self.head
 
         # Recorre la lista mientras el siguiente nodo exista
@@ -65,11 +65,42 @@ class LinkedList:
             current_node.next = current_node.next.next
 
     def print_all(self):
-        pass
+        current_node = self.head
+        
+        while current_node is not None:
+            print(current_node.data, end="")
+            
+            if current_node.next is not  None:
+                print(" -> ", end="")
+                
+            current_node = current_node.next
+            
+        print()
+    
 
 
 ll = LinkedList()
 
+print("Lista vacia:")
+ll.print_all()
+
+print("\nImprime dos elemntos:")
 ll.insert_front(10)
 ll.insert_front(20)
 ll.print_all()
+
+print("\nInsertar 30 al final de la lista:")
+ll.insert_back(30)
+ll.print_all()
+
+print("\nRemover el 10 de la lista:")
+ll.delete(10)
+ll.print_all()
+
+print("\nImprime todos los varlores:")
+ll.print_all()
+
+print("\nAgrega otro valor al final:")
+ll.insert_back(50)
+ll.print_all()
+
