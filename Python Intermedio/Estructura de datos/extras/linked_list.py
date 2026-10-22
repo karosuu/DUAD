@@ -58,7 +58,7 @@ class LinkedList:
         # y su valor sea diferente al que queremos eliminar.
         while current_node.next is not None and current_node.next.data != data:
             current_node = current_node.next
-        
+
         # Si el siguiente nodo existe, lo elimina enlazando el nodo actual
         # directamente con el nodo que viene después del que queremos eliminar.
         if current_node.next is not None:
@@ -66,17 +66,16 @@ class LinkedList:
 
     def print_all(self):
         current_node = self.head
-        
+
         while current_node is not None:
             print(current_node.data, end="")
-            
-            if current_node.next is not  None:
+
+            if current_node.next is not None:
                 print(" -> ", end="")
-                
+
             current_node = current_node.next
-            
+
         print()
-    
 
 
 ll = LinkedList()
@@ -103,4 +102,3 @@ ll.print_all()
 print("\nAgrega otro valor al final:")
 ll.insert_back(50)
 ll.print_all()
-
