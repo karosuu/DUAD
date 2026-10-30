@@ -46,7 +46,7 @@ class LinkedList:
 
         # Compara el valor del nodo almacenado con el que quiero eliminar.
         if self.head.data == data:
-            # Actualiza self.head al siguiente nodp
+            # Actualiza self.head al siguiente nodo
             self.head = self.head.next
             return
 

@@ -53,10 +53,10 @@ class Deque:
             self.tail = node
                 
         else:
-            # Conecatmos el antiguo nodo con el nuevo. 
+            # Conectamos el antiguo nodo con el nuevo. 
             self.tail.next = node
                 
-            # Establecemos la conexion inversa.
+            # Establecemos lel enlace inversa.
             node.prev = self.tail
             # Actualizamos tail para que apunte al nuevo último nodo.
             self.tail = node
