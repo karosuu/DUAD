@@ -53,7 +53,7 @@ class Queue:
         while current_node is not None:
             print(current_node.data, end="")
             
-            if current_node.next is not  None:
+            if current_node.next is not None:
                 print(" -> ", end="")
                 
             current_node = current_node.next
