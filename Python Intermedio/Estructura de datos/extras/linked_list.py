@@ -83,7 +83,7 @@ ll = LinkedList()
 print("Lista vacia:")
 ll.print_all()
 
-print("\nImprime dos elemntos:")
+print("\nImprime dos elementos:")
 ll.insert_front(10)
 ll.insert_front(20)
 ll.print_all()
@@ -96,7 +96,7 @@ print("\nRemover el 10 de la lista:")
 ll.delete(10)
 ll.print_all()
 
-print("\nImprime todos los varlores:")
+print("\nImprime todos los valores:")
 ll.print_all()
 
 print("\nAgrega otro valor al final:")
