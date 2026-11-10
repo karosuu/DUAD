@@ -14,15 +14,15 @@ class BinaryTree:
 
     def __init__(self):
         self.root = None
-        
+
     def print_structure(self):
         self._print_node(self.root)
 
     def _print_node(self, node):
         if node is None:
             return
-        
-        print(node.data)    
+
+        print(node.data)
         self._print_node(node.left)
         self._print_node(node.right)
 
@@ -45,7 +45,7 @@ fourth_node = Node(20)
 
 fifth_node = Node(25)
 
-sixth_node = Node (30)
+sixth_node = Node(30)
 
 
 binarytree.root = first_node
