@@ -137,10 +137,10 @@ dll.append("B")
 dll.append("C")
 
 print("Prueba 1 - Recorrido hacia adelante:")
-dll.print_forward()  # A -> B -> C
+dll.print_forward()  
 
 print("Prueba 2 - Recorrido hacia atrás:")
-dll.print_backward()  # C -> B -> A
+dll.print_backward()  
 
 
 # ==========================================
@@ -150,8 +150,8 @@ dll.print_backward()  # C -> B -> A
 print("\nPrueba 3 - Eliminar B:")
 dll.delete("B")
 
-dll.print_forward()   # A -> C
-dll.print_backward()  # C -> A
+dll.print_forward()  
+dll.print_backward()  
 
 
 # ==========================================
@@ -161,11 +161,11 @@ dll.print_backward()  # C -> A
 print("\nPrueba 4 - Eliminar C:")
 dll.delete("C")
 
-dll.print_forward()   # A
-dll.print_backward()  # A
+dll.print_forward()  
+dll.print_backward()  
 
-print("Head:", dll.head.data)  # A
-print("Tail:", dll.tail.data)  # A
+print("Head:", dll.head.data)  
+print("Tail:", dll.tail.data)  
 
 
 # ==========================================
@@ -175,11 +175,11 @@ print("Tail:", dll.tail.data)  # A
 print("\nPrueba 5 - Eliminar A:")
 dll.delete("A")
 
-dll.print_forward()   # Lista vacía
-dll.print_backward()  # Lista vacía
+dll.print_forward()   
+dll.print_backward()  
 
-print("Head:", dll.head)  # None
-print("Tail:", dll.tail)  # None
+print("Head:", dll.head)  
+print("Tail:", dll.tail)  
 
 
 # ==========================================
@@ -193,8 +193,8 @@ dll.append("Y")
 
 dll.delete("Z")
 
-dll.print_forward()   # X -> Y
-dll.print_backward()  # Y -> X
+dll.print_forward()  
+dll.print_backward()  
 
 
 # ==========================================
@@ -205,11 +205,11 @@ print("\nPrueba 7 - Eliminar el primer nodo:")
 
 dll.delete("X")
 
-dll.print_forward()   # Y
-dll.print_backward()  # Y
+dll.print_forward()   
+dll.print_backward()  
 
-print("Head:", dll.head.data)  # Y
-print("Tail:", dll.tail.data)  # Y
+print("Head:", dll.head.data)  
+print("Tail:", dll.tail.data)  
 
 
 # ==========================================
@@ -221,8 +221,8 @@ print("\nPrueba 8 - Eliminar el último nodo:")
 dll.append("Z")
 dll.delete("Z")
 
-dll.print_forward()   # Y
-dll.print_backward()  # Y
+dll.print_forward()   
+dll.print_backward()  
 
-print("Head:", dll.head.data)  # Y
-print("Tail:", dll.tail.data)  # Y
+print("Head:", dll.head.data)  
+print("Tail:", dll.tail.data)  
