@@ -26,11 +26,6 @@ class Deque:
             print(current_node.data)
             current_node = current_node.next
 
-    def bubble_sort(self):
-        # Si la Deque está vacía, no hay elementos que ordenar.
-        if self.head is None:
-            return
-
         # Representa el límite de la parte de la Deque que ya está ordenada.
         # Inicialmente es None porque todavía no hemos ordenado ningún elemento.
         end_node = None
