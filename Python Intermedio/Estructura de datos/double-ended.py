@@ -26,6 +26,34 @@ class Deque:
             print(current_node.data)
             current_node = current_node.next
 
+        # Representa el límite de la parte de la Deque que ya está ordenada.
+        # Inicialmente es None porque todavía no hemos ordenado ningún elemento.
+        end_node = None
+
+        # Repetimos las iteraciones hasta que el límite alcance head.
+        # Esto significa que todos los elementos han sido ordenados.
+        while end_node != self.head:
+            # Recorremos los nodos hasta alcanzar el límite de la parte ordenada.
+            current_node = self.head
+
+            while current_node.next != end_node:
+                # Obtenemos el siguiente nodo para comparar ambos elementos.
+                next_node = current_node.next
+
+                # Si el valor del nodo actual es mayor que el siguiente,
+                # intercambiamos sus valores data para colocarlos en orden.
+                if current_node.data > next_node.data:
+                    current_node.data, next_node.data = (
+                        next_node.data,
+                        current_node.data,
+                    )
+                # Avanzamos al siguiente nodo para continuar las comparaciones.
+                current_node = current_node.next
+            # Al finalizar el recorrido, el elemento más grande de la
+            # parte pendiente llegó a su posición definitiva.
+            # Actualizamos el límite para reducir el siguiente recorrido.
+            end_node = current_node
+
     def push_left(self, node):
 
         if self.head is None:
@@ -109,8 +137,7 @@ print("Resultado obtenido:")
 deque_left.print_structure()
 
 
-print("\n========== PRUEBA 2: PUSH RIGHT ==========")
-
+print("\nPrueba de push right: ")
 deque_right = Deque()
 
 deque_right.push_right(Node("A"))
@@ -157,5 +184,14 @@ deque.print_structure()
 
 deque.pop_left()
 
-print("Después de eliminar el primer nodo:")
-deque.print_structure()
+first_node = Node("Primer nodo A")
+deque_right.push_right(first_node)
+deque_right.print_structure()
+
+print("\nAntes de ordenar:")
+deque_right.print_structure()
+
+deque_right.bubble_sort()
+
+print("\nDespués de ordenar:")
+deque_right.print_structure()

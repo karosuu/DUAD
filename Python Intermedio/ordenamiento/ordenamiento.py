@@ -11,6 +11,7 @@ def bubble_sort(list_to_sort):
 
             current_element = list_to_sort[index]
             previous_element = list_to_sort[index - 1]
+            print(f"-- Iteracion {outer_index}, {index}. Elemento actual: {current_element}, Siguiente elemento: {previous_element}")
 
             print(
                 f"-- Iteracion {outer_index}, {index}. Elemento actual: {current_element}, Siguiente elemento: {previous_element}"
