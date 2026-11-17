@@ -1,9 +1,11 @@
-
 def bubble_sort(list_to_sort):
     for outer_index in range(len(list_to_sort) - 1):
         for index in range(len(list_to_sort) - 1, outer_index, -1):
             if list_to_sort[index] < list_to_sort[index - 1]:
-                list_to_sort[index], list_to_sort[index - 1] = list_to_sort[index - 1], list_to_sort[index]
+                list_to_sort[index], list_to_sort[index - 1] = (
+                    list_to_sort[index - 1],
+                    list_to_sort[index],
+                )
 
     return list_to_sort
 
@@ -25,4 +27,3 @@ try:
     print(validated_bubble_sort([5, 3, 8, "hola", 2, 7, 9]))
 except ValueError as error:
     print(error)
- 
