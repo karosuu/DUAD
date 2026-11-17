@@ -20,7 +20,7 @@ class LinkedList:
         node.next = self.head
         # El nuevo nodo se convierte en el primero de la lista.
         self.head = node
-    
+
     def insert_back(self, data):
         node = Node(data)
 
@@ -56,6 +56,7 @@ class LinkedList:
                     swapped = True
 
                 current_node = current_node.next
+
     def delete(self, data):
         if self.head is None:
             return
@@ -66,7 +67,7 @@ class LinkedList:
             self.head = self.head.next
             return
 
-        # Si el valor no esta en la lista iniciamos
+        # Si el valor no está en la lista iniciamos
         # el recorrido desde self.head
         current_node = self.head
 
@@ -78,7 +79,7 @@ class LinkedList:
         # Si el siguiente nodo existe, lo elimina enlazando el nodo actual
         # directamente con el nodo que viene después del que queremos eliminar.
         if current_node.next is not None:
-            current_node.next = current_node.next.next            
+            current_node.next = current_node.next.next
 
     def print_all(self):
         current_node = self.head
