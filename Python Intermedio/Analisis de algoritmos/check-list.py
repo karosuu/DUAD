@@ -1,3 +1,11 @@
+# Complejidad temporal: O(a * b)
+# Utiliza dos ciclos anidados para comparar cada elemento de list_a
+# con cada elemento de list_b. En el peor caso, realiza a * b
+# comparaciones. Si encuentra una coincidencia, retorna anticipadamente.
+#
+# Complejidad espacial: O(1)
+# No crea estructuras adicionales que dependan del tamaño de las listas.
+
 def check_if_lists_have_an_equal(list_a, list_b):
     for element_a in range(len(list_a)):
         for element_b in range(len(list_b)):
