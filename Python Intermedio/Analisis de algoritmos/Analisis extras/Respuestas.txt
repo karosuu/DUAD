@@ -1,0 +1,66 @@
+1. ¿Cuál es la complejidad de cada versión?
+
+Explicación:
+- manual_add(n): utiliza un ciclo for que recorre todos los números desde 1 hasta n. Su cantidad de operaciones aumenta proporcionalmente al valor de n.
+- add_formula(n): utiliza una fórmula matemática que realiza una cantidad constante de operaciones, independientemente del valor de n.
+
+2. ¿Qué versión usaría si number = 1,000,000,000? ¿Por qué?
+
+Justificación:
+
+Utilizaría add_formula(n) porque tiene una complejidad temporal O(1), mientras que manual_add(n) tiene O(n).
+
+Si n = 1,000,000,000:
+- manual_add(n) necesitaría realizar mil millones de iteraciones.
+- add_formula(n) solamente necesita realizar una cantidad constante de operaciones matemáticas.
+
+3. ¿Cuál es la complejidad de cada algoritmo?
+
+Linear Search (búsqueda lineal):
+- Recorre los elementos uno por uno.
+- En el peor caso debe revisar toda la lista.
+- Su complejidad es O(n).
+Binary Search (búsqueda binaria):
+- Divide el espacio de búsqueda a la mitad en cada iteración.
+- Reduce considerablemente la cantidad de comparaciones.
+- Su complejidad es O(log n).
+
+4. ¿En qué condiciones conviene usar cada uno?
+
+Linear Search:
+- Cuando la lista es pequeña.
+- Cuando la lista no está ordenada.
+- Cuando necesitas realizar búsquedas sencillas.
+- Cuando ordenar previamente la lista no resulta conveniente.
+Binary Search:
+- Cuando la lista está ordenada.
+- Cuando trabajas con listas grandes.
+- Cuando necesitas realizar búsquedas frecuentes.
+- Cuando quieres reducir la cantidad de comparaciones.
+
+5. ¿Qué pasa si la lista no está ordenada?
+
+Linear Search:
+
+Funciona perfectamente aunque la lista esté desordenada, porque compara cada elemento individualmente hasta encontrar el objetivo.
+
+Binary Search:
+
+No garantiza resultados correctos si la lista no está ordenada.
+
+Esto sucede porque su lógica depende de comparar el elemento central y descartar una mitad de la lista. Si los elementos no están ordenados, puede descartar incorrectamente la mitad que contiene el valor buscado.
+
+6. Cuál es la complejidad temporal?
+
+Justificación:
+
+La función utiliza dos ciclos anidados que recorren todas las claves del diccionario.
+- El primer ciclo realiza n iteraciones.
+- El segundo ciclo realiza n iteraciones por cada iteración del primero.
+- En total, genera n × n combinaciones.
+
+7. ¿Cuánto tarda si hay 1 millón de claves?
+
+Si el diccionario tiene 1 millón de claves, el algoritmo tendría que generar 1 billón de combinaciones (1,000,000,000,000).
+
+Esto tomaría muchísimo tiempo y consumiría muchos recursos de la computadora, especialmente porque debe imprimir cada combinación en consola. Por eso, este algoritmo no sería práctico para trabajar con diccionarios tan grandes.
